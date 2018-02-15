@@ -1,21 +1,21 @@
 ---
-title: "Test"
+title: "Developing Data Products (week 2)"
 author: "jverce"
 date: '2018-02-14'
-output: ioslides_presentation
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Simple Map
+## Map
 
-```{r}
+```{r map}
 library(leaflet)
-map <- (
-  leaflet() %>%
-  addTiles()
+skiCenters <- data.frame(
+  lng = c(-123.2045, -123.0995, -122.9444),
+  lat = c(49.3960, 49.3723, 49.3933)
 )
-map
+skiCenters %>% leaflet() %>% addTiles() %>% addMarkers()
 ```
